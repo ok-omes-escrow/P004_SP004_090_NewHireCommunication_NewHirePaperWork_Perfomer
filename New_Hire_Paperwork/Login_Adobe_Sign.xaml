@@ -1,0 +1,148 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Login_Adobe_Sign" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="824,1036.8" sap2010:WorkflowViewState.IdRef="Login_Adobe_Sign_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Login_Adobe_Sign" sap:VirtualizedContainerService.HintSize="608,972" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Open_Application" sap:VirtualizedContainerService.HintSize="545.6,860" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="https://omesofm.na1.documents.adobe.com/account/homeJS" Name="str_AdobeSignURL" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Adobe ID" sap:VirtualizedContainerService.HintSize="483.2,748" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="841c2358-294d-427f-81cc-02c88f721071" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,531.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Default="Kaushik.Kumar.CTR@omes.ok.gov" Name="str_EmailAddress" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email address'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="841c2358-294d-427f-81cc-02c88f721071" Text="[str_EmailAddress]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://auth.services.adobe.com/en_US/deeplink.html?deeplink=ssofirst&amp;callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fadobeid%2FEchoSign2%2FAdobeID%2Fcode%3Fredirect_uri%3Dhttps%253A%252F%252Fgps.echosign.com%252Fpublic%252FadobeIDLogin%253Fserver%253Domesofm.na1.documents.adobe.com%2526isAdobeSignAuth%253Dfalse%2526port%253D443%26state%3Dd5e7588a59de133d740b5cc5a8f64292d3954e268e2f210836e1b169d83e857b%26code_challenge_method%3Dplain%26use_ms_for_expiry%3Dtrue&amp;client_id=EchoSign2&amp;scope=openid%2CAdobeID%2CDCAPI%2Cadditional_info.account_type%2Cskybox%2Cupdate_profile.first_name%2Cupdate_profile.last_name%2Cagreement_send%2Cagreement_sign%2Csign_library_write%2Csign_user_read%2Csign_user_write%2Cagreement_read%2Cagreement_write%2Cwidget_read%2Cwidget_write%2Cworkflow_read%2Cworkflow_write%2Csign_addressbook_read%2Csign_library_read%2Cadditional_info.projectedProductContext%2Csign_webhook_read%2Csign_webhook_write%2Csign_webhook_retention%2Csao.ACOM_ESIGN_TRIAL%2Cee.GROUP_SIGN_WEB%2Cadditional_info.ownerOrg%2Cadditional_info.roles%2Caps.read.app_merchandising%2Csign_application_read%2Csign_application_write&amp;state=d5e7588a59de133d740b5cc5a8f64292d3954e268e2f210836e1b169d83e857b&amp;relay=fb3dafab-92e7-499c-a116-d78cf190ae53&amp;locale=en_US&amp;flow_type=code&amp;ctx_id=Adobe_Sign&amp;dctx_id=adobe_document_cloud&amp;idp_flow_type=login&amp;s_p=google%2Cfacebook%2Capple&amp;response_type=code&amp;code_challenge_method=plain&amp;redirect_uri=https%3A%2F%2Fgps.echosign.com%2Fpublic%2FadobeIDLogin%3Fserver%3Domesofm.na1.documents.adobe.com%26isAdobeSignAuth%3Dfalse%26port%3D443&amp;use_ms_for_expiry=true#/" DesignTimeRectangle="1029, 371, 495, 35" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT EmailPage-EmailFi…'" FullSelectorArgument="&lt;webctrl id='EmailPage-EmailField' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='EmailPage-EmailField' tag='INPUT' type='email' class='spectrum-Textfield spectrum-Textfield--quiet' aaname='Email address' /&gt;" Guid="8228600d-6459-4cff-8c08-861884a0ead9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfMAAAAnCAYAAAAb16HGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADBSURBVHhe7dVBDYBAAMRAXOESrThYwuc8NJlJqqHXAIA0MweAODMHgDgzB4A4MweAODMHgDgzB4A4MweAODMHgDgzB4A4MweAODMHgDgzB4A4MweAODMHgDgzB4A4MweAODMHgDgzB4A4MweAODMHgDgzB4A4MweAODMHgDgzB4A4MweAODMHgDgzB4A4MweAODMHgDgzB4A4MweAODMHgDgzB4A4MweAODMHgDgzB4C4M/P7eSVJUqyfmUuSFG7bPnF9/lSGPrjEAAAAAElFTkSuQmCC" InformativeScreenshot="3ed7d774ec58678df81c646c2ce454a8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe ID' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="1029, 352, 495, 20" ElementType="Text" FriendlyName="'Email address'" FullSelectorArgument="&lt;webctrl id='react-spectrum-1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='react-spectrum-1' tag='LABEL' type='' class='spectrum-FieldLabel' aaname='Email address' check:innerText='Email address' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfMAAAAYCAYAAADu+xS+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQQSURBVHhe7dstk6tIGAXg/dEIBAaBwCAiYhCImAgEJhKDQGAQCAwCgYlAtEHEnH27gYQwmXzcvTO1VJ2niqrpjzTNmEM38A+IiIho0xjmREREG8cwJyIi2jiGORER0cYxzImIiDaOYU5ERLRxDHMiIqKN+5+E+Rmpb8GKqqn8H1QRLMtHep7Ka6/aiYiINuY+zE3QSaiuj78Rsiuq2MO2XCStLjHMiYiI/tSDMPeQNApKLY7hMnX4i84F4jhDO5gCw5yIiOgPPQjz74JuDFw3PCD0bOkn4Wv7iKsGeeTLKluv4m1pz6XnpMuwm/uu2+7O9SzMFepjAMfWY0znrM0dwGRAm0UInPk8+lhew7P2CpGU93JTEfm6PZIaoWokO3e8JttDmF8HQ18eb2PZDsJC6VqUiznaTghTTURE9As+DnO9cj+UHVTfIDZlC84+RdMrdHkIR8q7fEqyLkdStOhldd83CQJp85JubPskzNMUVad3CToUoSO/C1GazYJBhtFlF/ukQqd3EYpwMe6r9jHMb+0DLvNcghO6ywW9uSYHx0a6X0qE0t8/ddJPiucG9fki1eOYp87U4tzUkGoiIqJf8dYz8zFjHwRuuQ7/FokrfQ71VL5XRtIWpLKOFW+H+cr5BE/mZE7RJebvsFis1Jfjvmqfwtw7XS8AqI8S3h7me467a1I5dtLfX/YXKt+ZMVfVREREv+KtZ+bjI/MHgXsXjNqqz9AiDf3bFrk+/FR6iQ/C3Gxtu8tt8vEGo08D+TtCOfUzFuO+apeCCXP/dgFyr+DBco7QC/FZpW9CzLxlpX9wzfltP0Im/ydjqHDQgW/Z8KMMczUREdFv+Hyb/e0wV8h3OgRjCbdxz/kWiqaw+O2TMG/0Stkxz63He4oU/hTm59SXMb4P61ftUvgS5maOUvflmHcUZBaqmZ+x29jPjxQuCk0Wwdc3LvYeczUREdFP+8Ew/yYoPwzzOZCvLYswn4M+qhYPqJfjvmp/MMfm6MByY5gv5p4aUOxlzteQnwwF9jJmkN7VEhER/Zi3ttnV8sWwt8NcIQt0eOuVuW67oAh1+VmY362hR+YZtl6Z92Zlfpmeg4/TkN/pc9gB4qozc+2z/f24T9u/hjnacXw3ytD24/V3TYlWX4OqkWYN+nEiOOk5hyX6OkXWzPM7mZuNcHxDj4iI6Me99QKc5SayUv00zEVf4hg418/WHDdAlLcm9Na/PWeB6Wcf1y/PDWjTEN710zQX/i5GNW9jDy2yaPnpmiPtJzRzlj5tfxDmYmjT2+d3ctjeDpl+IU6VOPi363GDGLXMQ5UH+NfP1VwEcS23MkRERL/jPsyJiIhocxjmREREG8cwJyIi2jiGORER0cYxzImIiDaOYU5ERLRpwL/0cX88yOtIngAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="841c2358-294d-427f-81cc-02c88f721071" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://auth.services.adobe.com/en_US/deeplink.html?deeplink=ssofirst&amp;callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fadobeid%2FEchoSign2%2FAdobeID%2Fcode%3Fredirect_uri%3Dhttps%253A%252F%252Fgps.echosign.com%252Fpublic%252FadobeIDLogin%253Fserver%253Domesofm.na1.documents.adobe.com%2526isAdobeSignAuth%253Dfalse%2526port%253D443%26state%3Dd5e7588a59de133d740b5cc5a8f64292d3954e268e2f210836e1b169d83e857b%26code_challenge_method%3Dplain%26use_ms_for_expiry%3Dtrue&amp;client_id=EchoSign2&amp;scope=openid%2CAdobeID%2CDCAPI%2Cadditional_info.account_type%2Cskybox%2Cupdate_profile.first_name%2Cupdate_profile.last_name%2Cagreement_send%2Cagreement_sign%2Csign_library_write%2Csign_user_read%2Csign_user_write%2Cagreement_read%2Cagreement_write%2Cwidget_read%2Cwidget_write%2Cworkflow_read%2Cworkflow_write%2Csign_addressbook_read%2Csign_library_read%2Cadditional_info.projectedProductContext%2Csign_webhook_read%2Csign_webhook_write%2Csign_webhook_retention%2Csao.ACOM_ESIGN_TRIAL%2Cee.GROUP_SIGN_WEB%2Cadditional_info.ownerOrg%2Cadditional_info.roles%2Caps.read.app_merchandising%2Csign_application_read%2Csign_application_write&amp;state=d5e7588a59de133d740b5cc5a8f64292d3954e268e2f210836e1b169d83e857b&amp;relay=fb3dafab-92e7-499c-a116-d78cf190ae53&amp;locale=en_US&amp;flow_type=code&amp;ctx_id=Adobe_Sign&amp;dctx_id=adobe_document_cloud&amp;idp_flow_type=login&amp;s_p=google%2Cfacebook%2Capple&amp;response_type=code&amp;code_challenge_method=plain&amp;redirect_uri=https%3A%2F%2Fgps.echosign.com%2Fpublic%2FadobeIDLogin%3Fserver%3Domesofm.na1.documents.adobe.com%26isAdobeSignAuth%3Dfalse%26port%3D443&amp;use_ms_for_expiry=true#/" DesignTimeRectangle="1439, 441, 67, 23" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Continue'" FullSelectorArgument="&lt;webctrl tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='spectrum-Button-label' aaname='Continue' check:innerText='Continue' /&gt;" Guid="e28d429b-af99-4c30-85e3-1dc0d8958981" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAbCAYAAAAu/JKTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMoSURBVFhH7Zc9SyNBGMfvQ/hF/AZ211naXWdpt52lpA14TZA0KQQtAmKhXZqDYJGARVIEgoXCIllxcxuMu97m5X/PzM7OS9wMe55IinngD5nZZ/Z59jfPvOTblvcIp2I5OBY5OBY5OBY5OBY5OBY5OBY5OBZtJpxqhMbtFF614NkXqgBOgN3LGN1wgQS6LdC+WvX9X4U46sS4vktw8lP1n/giZBjju+H/tVqBE6LhL0Rm7633S/f9DL1iyN88R+tU9R/057w3un/BtuH/tTLgHN7lYJYY+TGO6k/y2c75BF5d+X6Kmm+IeDwTzqZIwalM0eOJAqNBZJ2x7eaULztp6QK9m7E2Jq+IGdr9FKOYN4RfmPl0ZqJTtxQn9ExO0iTBvtZO/AStQC33KExwWFmNaVb4WSA6/ans26pP6T1zRGn2KIlnaF2pQsil4MhkZzirmU66ti/z2SZLl0hEAGajwW/hpxLlxvzET753NcnnJjXGJswn/mOFk5kZE8Hru5hWOHXyy6FMZhjKSV7SuECOY5JwvJWEdCelZ1yEmVsSxNjnsxZgv6/AXvCNVSX60BdVWKXKFElJiBK0uazWwompsvjSDuANsn2JVVuDjysH5+h+yZsJtfeEz16eP8X7IfqYJJzVhPJ+Q7UED9xpia5xcqklOeywdslZ/Fc4em7vxpaJ+YKuXjWBkKyebFnnY4uXleZgaM3HbHkR2mJfGQ3G1N5UOMqn0NJ1cGqxqAra6O4i6WCoROX0bti63fzKySrcLgWH1vGxWI/MIv8VBzW1Qe3UQ+x4Y7QmwoESPRDj5J6T0p5TOlHq0z/wXPl9DI76cDm5lTGu83x5zIDucaJNVdLQb+DVZ+zKky+TBodUidAKFSDTsiSM08o4OehuJK8AJeFU9DKnd9EmzzbEj8EJ6Gat5W6ckGR5TO204sZP3GycniuTCYfrCV7nDcPYhMTuAllVUBU1Y/QmImEy9qx7q9+NSsKhDzoczNRH0L2lCEY5OCSa3Gt5D1oiok237YtTTcakCT5l9xz971Hme3Ep3iNUAMcpl4NjkYNjkYNjkYNjkYOzVo/4C8QZcHJ5xS0jAAAAAElFTkSuQmCC" InformativeScreenshot="83f6bda85b262b0d801b508a0ba2ca88.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe ID' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="1419, 433, 106, 40" ElementType="Button" FriendlyName="'Continue'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='spectrum-Button spectrum-Button--cta SpinnerButton SpinnerButton--right' aaname='Continue' check:innerText='Continue' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="0, 0, 1920, 1030" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI+SURBVFhH7VcxSxxBGP0iQkBQk9m0VoKFnVWCVUorUWxsLQQbwc6zsLezCpguNiE/IRaCjWBpY2d1jZVFQEEQXL9v9l2cnXtzM3fYCD54hTvvve+5t5+3yjvqL1IXs5JfsCVhGupNcLgCTr5hThKmod4EywtUcoEZWZiWZhCWF/gs68jPwrQ0g7CsQCW3tcg48rMwrfewrIilBQ6QXQzz0KyI+QKVPOqDNYPcYpjHe1lmwJI78AeZQ8O8UVYf8wUKVi+FkpXMFbhE1siwjCizxVyBLeRQ1J9kQT/nr/iRwjKizBbTBZrVm0AOhWqOjfiRwjJ8FpuhHFRg4OrVU+JU9+A5KRUuU1hWKzsgL1DJU271VLMX6HdxmQIr+dSaAaYK/IWXQm/rmGq6gb5r13BMYZmtGSAv4GQJPgoNWyW+ZRxTWCbxkAKVXOlv8wE+CtWcEt8Jjiks02dHvv4CTnbgoainZbbPY7TPWM8go7Ds2BcXuLenG3oKHfQj8oQ8hIwCm3MfetoFnBxBS+F3OgposZJ/poGcwmaEnpcCzerNQ0ehmu3QTOlkE3IKm+FnQR8WGLh6BtVd/9enqA8a5Emo7qynDwus4JxCb+1H1X3vI3sLdrIIG0X4ytYUaP6QFL9yhVD/XC8s4G8cU9gsP1O1vQIdnI0E9Z8Hwy3vseD7odMrkF29HPSWb7QKGJ3s45jCr6QWtSbZ/3ZywPNxF5W40euDvx/sdU+bjvzKFULDfgbDGzpZwzHFa81+yxB5BmABrjTpsVo7AAAAAElFTkSuQmCC" InformativeScreenshot="93cffb97bf1f16c00df276104a1ff52c.jpg" Selector="&lt;html app='msedge.exe' title='Adobe ID' /&gt;" Title="Adobe ID" Url="https://auth.services.adobe.com/en_US/deeplink.html?deeplink=ssofirst&amp;callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fadobeid%2FEchoSign2%2FAdobeID%2Fcode%3Fredirect_uri%3Dhttps%253A%252F%252Fgps.echosign.com%252Fpublic%252FadobeIDLogin%253Fserver%253Domesofm.na1.documents.adobe.com%2526isAdobeSignAuth%253Dfalse%2526port%253D443%26state%3Db5aff982a271812dff38abb88c97833aeb6d963d8ffd08355f9a4e85cb1e5171%26code_challenge_method%3Dplain%26use_ms_for_expiry%3Dtrue&amp;client_id=EchoSign2&amp;scope=openid%2CAdobeID%2CDCAPI%2Cadditional_info.account_type%2Cskybox%2Cupdate_profile.first_name%2Cupdate_profile.last_name%2Cagreement_send%2Cagreement_sign%2Csign_library_write%2Csign_user_read%2Csign_user_write%2Cagreement_read%2Cagreement_write%2Cwidget_read%2Cwidget_write%2Cworkflow_read%2Cworkflow_write%2Csign_addressbook_read%2Csign_library_read%2Cadditional_info.projectedProductContext%2Csign_webhook_read%2Csign_webhook_write%2Csign_webhook_retention%2Csao.ACOM_ESIGN_TRIAL%2Cee.GROUP_SIGN_WEB%2Cadditional_info.ownerOrg%2Cadditional_info.roles%2Caps.read.app_merchandising%2Csign_application_read%2Csign_application_write&amp;state=b5aff982a271812dff38abb88c97833aeb6d963d8ffd08355f9a4e85cb1e5171&amp;relay=eed81d3c-81f4-4670-b72a-ff9cf9c1b8d0&amp;locale=en_US&amp;flow_type=code&amp;ctx_id=Adobe_Sign&amp;dctx_id=adobe_document_cloud&amp;idp_flow_type=login&amp;s_p=google%2Cfacebook%2Capple&amp;response_type=code&amp;code_challenge_method=plain&amp;redirect_uri=https%3A%2F%2Fgps.echosign.com%2Fpublic%2FadobeIDLogin%3Fserver%3Domesofm.na1.documents.adobe.com%26isAdobeSignAuth%3Dfalse%26port%3D443&amp;use_ms_for_expiry=true#/" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
