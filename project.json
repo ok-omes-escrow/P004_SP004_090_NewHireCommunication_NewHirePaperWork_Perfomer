@@ -3,13 +3,14 @@
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {
-    "LIB_AdobeSign": "[1.0.1]",
+    "LIB_AdobeSign": "[1.0.4]",
     "LIB_O365_Sharepoint_00.00": "[1.0.6]",
+    "LIB_O365MailActivities_00.00": "[1.0.3]",
     "UiPath.Adobe.AdobeSign.Activities": "[3.0.0]",
-    "UiPath.Excel.Activities": "[2.20.2]",
-    "UiPath.System.Activities": "[23.4.5]",
-    "UiPath.Testing.Activities": "[23.4.1]",
-    "UiPath.UIAutomation.Activities": "[23.4.8]"
+    "UiPath.Excel.Activities": "[2.22.3]",
+    "UiPath.System.Activities": "[23.10.3]",
+    "UiPath.Testing.Activities": "[23.10.0]",
+    "UiPath.UIAutomation.Activities": "[23.10.8]"
   },
   "webServices": [],
   "entitiesStores": [],
