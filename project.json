@@ -5,10 +5,8 @@
   "dependencies": {
     "LIB_AdobeSign": "[1.0.6-alpha.2]",
     "LIB_GraphAPI_1.0": "[1.0.1-alpha.2]",
-    "LIB_O365_Sharepoint_00.00": "[1.0.6]",
     "LIB_O365MailActivities_00.00": "[1.0.3]",
     "O365MailActivities_00.00": "[1.0.1]",
-    "UiPath.Adobe.AdobeSign.Activities": "[3.0.0]",
     "UiPath.Excel.Activities": "[2.22.3]",
     "UiPath.System.Activities": "[23.10.3]",
     "UiPath.Testing.Activities": "[23.10.0]",

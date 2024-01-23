@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>824,1212</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1130.4,1324</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendEmail_O365_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -130,21 +130,23 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendEmail_Outlook" sap:VirtualizedContainerService.HintSize="512,1147.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow send the email to Business and to the required recipients" DisplayName="SendEmail_Outlook" sap:VirtualizedContainerService.HintSize="512,1219.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Start Log Message" sap:VirtualizedContainerService.HintSize="449.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Sending email started&quot;]" />
-    <Sequence DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="449.6,670.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="449.6,711.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <l:Send_Email DisplayName="Send Email - To Recipients" sap:VirtualizedContainerService.HintSize="387.2,558.4" sap2010:WorkflowViewState.IdRef="Send_Email_2" in_listOfAttachment="[in_listAttachmentFiles]" in_strApplicationIDAssetName="[in_strAppIDAsset]" in_strApplicationSecretAssetName="[in_strAppSecretAsset]" in_strFromEmailAccount="[in_strAccount]" in_strMailBody="[in_strBody]" in_strMailRecipientCC="[New String(){&quot;kaushik.kumar@omes.ok.gov&quot;,&quot;arunkumar.vijayakumar@omes.ok.gov&quot;}]" in_strMailRecipientTo="[in_arrToEmail]" in_strMailSubject="[in_strSubject]" in_strOrchestratorFolderPath="[in_strOrchestratorFolder]" in_strTenantIDAssetName="[in_strTenantIDAsset]" />
+      <l:Send_Email DisplayName="Send Email - To Recipients" sap:VirtualizedContainerService.HintSize="387.2,599.2" sap2010:WorkflowViewState.IdRef="Send_Email_2" in_listOfAttachment="[in_listAttachmentFiles]" in_strApplicationIDAssetName="[in_strAppIDAsset]" in_strApplicationSecretAssetName="[in_strAppSecretAsset]" in_strFromEmailAccount="[in_strAccount]" in_strMailBody="[in_strBody]" in_strMailRecipientCC="[New String(){&quot;kaushik.kumar@omes.ok.gov&quot;,&quot;arunkumar.vijayakumar@omes.ok.gov&quot;}]" in_strMailRecipientTo="[in_arrToEmail]" in_strMailSubject="[in_strSubject]" in_strOrchestratorFolderPath="[in_strOrchestratorFolder]" in_strTenantIDAssetName="[in_strTenantIDAsset]" />
     </Sequence>
     <ui:LogMessage DisplayName="End Log Message" sap:VirtualizedContainerService.HintSize="449.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Sending email completed&quot;]">
       <sap:WorkflowViewStateService.ViewState>
