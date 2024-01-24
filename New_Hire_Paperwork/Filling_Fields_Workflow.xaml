@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1162.4,10808.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1162.4,10229.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Filling_Fields_Workflow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,11 +108,12 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow fills all the information of New Hire Employee in Adobe Sign Application.&#xA;" DisplayName="Filling_Fields_Workflow" sap:VirtualizedContainerService.HintSize="1172.8,10744" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow fills all the information of New Hire Employee in Adobe Sign Application.&#xA;" DisplayName="Filling_Fields_Workflow" sap:VirtualizedContainerService.HintSize="1172.8,10044.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strfmlaRightsDropdownAttribute" />
-      <Variable x:TypeArguments="x:String" Name="strcobraNoticeDropdownAttribute" />
-      <Variable x:TypeArguments="x:String" Name="strlongevityCertificateDropdownAttribute" />
+      <Variable x:TypeArguments="x:String" Name="strfmlaRightsDropdown" />
+      <Variable x:TypeArguments="x:String" Name="strcobraNoticeDropdown" />
+      <Variable x:TypeArguments="x:String" Name="strlongevityDropdown" />
+      <Variable x:TypeArguments="x:String" Name="stregidInusranceDropdown" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -121,25 +122,21 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - Start Notification" sap:VirtualizedContainerService.HintSize="1110.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Filling Workfield Fields Started&quot;]" />
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Edge: Adobe Acrobat Sign" sap:VirtualizedContainerService.HintSize="1110.4,10405.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V2">
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Edge: Adobe Acrobat Sign" sap:VirtualizedContainerService.HintSize="1110.4,10639.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1076.8,10188.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:Boolean" Name="bool_workflowExsist" />
-            </Sequence.Variables>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1076.8,10422.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Workflow_Actions" sap:VirtualizedContainerService.HintSize="1014.4,10073.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Workflow_Actions" sap:VirtualizedContainerService.HintSize="1014.4,10307.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
-                <Variable x:TypeArguments="x:String" Name="stregidInusranceDropdownAttribute" />
                 <Variable x:TypeArguments="x:String" Name="strempID" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
@@ -170,7 +167,7 @@
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innertext" DisplayName="Get Attribute 'COBRA Notice'" sap:VirtualizedContainerService.HintSize="952,208" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Result="[strcobraNoticeDropdownAttribute]" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innertext" DisplayName="Get Attribute 'COBRA Notice'" sap:VirtualizedContainerService.HintSize="952,208" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Result="[strcobraNoticeDropdown]" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
                 <uix:NGetAttributeGeneric.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="664, 739, 350, 24" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'---'" FullSelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl type='' tag='SELECT' class='' aaname='*COBRA Notice (Benefit Eligible Employee)*' /&gt;" Guid="7f61131b-5699-4b04-a112-9dbdce6e3863" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWIAAAAcCAYAAABbA7V/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFBSURBVHhe7dhJagJRFIbR7M89CDYryMCVZB3ipHAf2YRBUQeOHL1wC6NlE7SwuZCcAz/qe+Lwo/CtAJBKiAGSCTFAsqMQj0YjMzN7wZr2IT69AOB5ms0VYoAEQgyQTIgBkgkxQDIhBkgmxADJhBggmRADPMB4PC7r9Xr36VzcTSaT3adjQgxwp6qqSqfTKYPBoCyXy93pQZzFXXxnOp3uTg+EGOBOq9Wq9Hq9fYybT8bx/ifCw+Gw/u4pIQZ4gMVicRbjZoTj7lKEQ6sQf1Xv9Q/u9/F58xnAXxcx7vf7dffi9ed9xDjuftPuiXi7KZtNY9sWZwD/wHw+3wf4lgiHdiEG4KoIb7fbrf+OuBbhIMQATzCbzeqn41sIMUAyIQZIJsQAyYQYIJkQAyQTYoBkF0Mc4sLMzJ6/pqMQA/BqpXwDg6tQXZ49TBQAAAAASUVORK5CYII=" InformativeScreenshot="2bbf23ea89f4d4f242708c2e4f7fe772.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -181,7 +178,7 @@
                   </uix:TargetAnchorable>
                 </uix:NGetAttributeGeneric.Target>
               </uix:NGetAttributeGeneric>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innertext" DisplayName="Get Attribute 'FMLA Rights'" sap:VirtualizedContainerService.HintSize="952,208" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" Result="[strfmlaRightsDropdownAttribute]" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innertext" DisplayName="Get Attribute 'FMLA Rights'" sap:VirtualizedContainerService.HintSize="952,208" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" Result="[strfmlaRightsDropdown]" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
                 <uix:NGetAttributeGeneric.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="664, 793, 350, 24" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'---'" FullSelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl aaname='      &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;FMLA Rights ＆ Responsibilities (Benefit Eligible Emplo*' tableRow='1' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl aaname='*FMLA Rights ＆ Responsibilities (Benefit Eligible Emplo*' type='' tag='SELECT' class='' /&gt;" Guid="7a672a5e-b887-4726-8580-7f67f0dd5725" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWIAAAAcCAYAAABbA7V/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFBSURBVHhe7dhJagJRFIbR7M89CDYryMCVZB3ipHAf2YRBUQeOHL1wC6NlE7SwuZCcAz/qe+Lwo/CtAJBKiAGSCTFAsqMQj0YjMzN7wZr2IT69AOB5ms0VYoAEQgyQTIgBkgkxQDIhBkgmxADJhBggmRADPMB4PC7r9Xr36VzcTSaT3adjQgxwp6qqSqfTKYPBoCyXy93pQZzFXXxnOp3uTg+EGOBOq9Wq9Hq9fYybT8bx/ifCw+Gw/u4pIQZ4gMVicRbjZoTj7lKEQ6sQf1Xv9Q/u9/F58xnAXxcx7vf7dffi9ed9xDjuftPuiXi7KZtNY9sWZwD/wHw+3wf4lgiHdiEG4KoIb7fbrf+OuBbhIMQATzCbzeqn41sIMUAyIQZIJsQAyYQYIJkQAyQTYoBkF0Mc4sLMzJ6/pqMQA/BqpXwDg6tQXZ49TBQAAAAASUVORK5CYII=" InformativeScreenshot="bd188d3296de9ec7304a7dfbae93dac3.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -192,7 +189,7 @@
                   </uix:TargetAnchorable>
                 </uix:NGetAttributeGeneric.Target>
               </uix:NGetAttributeGeneric>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innertext" DisplayName="Get Attribute 'Longevity Certificate'" sap:VirtualizedContainerService.HintSize="952,208" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" Result="[strlongevityCertificateDropdownAttribute]" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innertext" DisplayName="Get Attribute 'Longevity Certificate'" sap:VirtualizedContainerService.HintSize="952,208" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" Result="[strlongevityDropdown]" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
                 <uix:NGetAttributeGeneric.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="664, 849, 350, 24" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'---'" FullSelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl aaname='      &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Longevity Certificate (Benefit Eligible Employee)  &amp;#x9;&amp;#x9;&amp;#x9;' tableRow='1' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl aaname='*Longevity Certificate (Benefit Eligible Employee)*' type='' tag='SELECT' class='' /&gt;" Guid="8ff307cf-c157-488b-88b4-9ba822fb5fd6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWIAAAAcCAYAAABbA7V/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFBSURBVHhe7dhJagJRFIbR7M89CDYryMCVZB3ipHAf2YRBUQeOHL1wC6NlE7SwuZCcAz/qe+Lwo/CtAJBKiAGSCTFAsqMQj0YjMzN7wZr2IT69AOB5ms0VYoAEQgyQTIgBkgkxQDIhBkgmxADJhBggmRADPMB4PC7r9Xr36VzcTSaT3adjQgxwp6qqSqfTKYPBoCyXy93pQZzFXXxnOp3uTg+EGOBOq9Wq9Hq9fYybT8bx/ifCw+Gw/u4pIQZ4gMVicRbjZoTj7lKEQ6sQf1Xv9Q/u9/F58xnAXxcx7vf7dffi9ed9xDjuftPuiXi7KZtNY9sWZwD/wHw+3wf4lgiHdiEG4KoIb7fbrf+OuBbhIMQATzCbzeqn41sIMUAyIQZIJsQAyYQYIJkQAyQTYoBkF0Mc4sLMzJ6/pqMQA/BqpXwDg6tQXZ49TBQAAAAASUVORK5CYII=" InformativeScreenshot="927f9c35cc1ec4e9f953b4cc50c0ea66.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -203,7 +200,7 @@
                   </uix:TargetAnchorable>
                 </uix:NGetAttributeGeneric.Target>
               </uix:NGetAttributeGeneric>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innertext" DisplayName="Get Attribute 'EGID Insurance ＆ Info'" sap:VirtualizedContainerService.HintSize="952,208" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_5" Result="[stregidInusranceDropdownAttribute]" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innertext" DisplayName="Get Attribute 'EGID Insurance ＆ Info'" sap:VirtualizedContainerService.HintSize="952,208" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_5" Result="[stregidInusranceDropdown]" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
                 <uix:NGetAttributeGeneric.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="664, 902, 350, 24" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'---'" FullSelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl aaname='      &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;EGID Insurance ＆ Info  &amp;#x9;&amp;#x9;&amp;#x9;' tableRow='1' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl aaname='*EGID Insurance ＆ Info*' type='' tag='SELECT' class='' /&gt;" Guid="c1accd45-3125-4a62-b9c4-1109e18b7ba9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWIAAAAcCAYAAABbA7V/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFBSURBVHhe7dhJagJRFIbR7M89CDYryMCVZB3ipHAf2YRBUQeOHL1wC6NlE7SwuZCcAz/qe+Lwo/CtAJBKiAGSCTFAsqMQj0YjMzN7wZr2IT69AOB5ms0VYoAEQgyQTIgBkgkxQDIhBkgmxADJhBggmRADPMB4PC7r9Xr36VzcTSaT3adjQgxwp6qqSqfTKYPBoCyXy93pQZzFXXxnOp3uTg+EGOBOq9Wq9Hq9fYybT8bx/ifCw+Gw/u4pIQZ4gMVicRbjZoTj7lKEQ6sQf1Xv9Q/u9/F58xnAXxcx7vf7dffi9ed9xDjuftPuiXi7KZtNY9sWZwD/wHw+3wf4lgiHdiEG4KoIb7fbrf+OuBbhIMQATzCbzeqn41sIMUAyIQZIJsQAyYQYIJkQAyQTYoBkF0Mc4sLMzJ6/pqMQA/BqpXwDg6tQXZ49TBQAAAAASUVORK5CYII=" InformativeScreenshot="4647a8d00df82d5941ed0711c6ff5444.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -219,34 +216,34 @@
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
                       <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:String">[strcobraNoticeDropdownAttribute]</OutArgument>
+                        <OutArgument x:TypeArguments="x:String">[strcobraNoticeDropdown]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[strcobraNoticeDropdownAttribute.Replace("---","").Trim]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[strcobraNoticeDropdown.Replace("---","").Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
                       <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:String">[stregidInusranceDropdownAttribute]</OutArgument>
+                        <OutArgument x:TypeArguments="x:String">[stregidInusranceDropdown]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[stregidInusranceDropdownAttribute.Replace("---","").Trim]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[stregidInusranceDropdown.Replace("---","").Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
                       <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:String">[strfmlaRightsDropdownAttribute]</OutArgument>
+                        <OutArgument x:TypeArguments="x:String">[strfmlaRightsDropdown]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[strfmlaRightsDropdownAttribute.Replace("---","").Trim]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[strfmlaRightsDropdown.Replace("---","").Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
                       <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:String">[strlongevityCertificateDropdownAttribute]</OutArgument>
+                        <OutArgument x:TypeArguments="x:String">[strlongevityDropdown]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[strlongevityCertificateDropdownAttribute.Replace("---","").Trim]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[strlongevityDropdown.Replace("---","").Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -260,7 +257,7 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
-              <If Condition="[strcobraNoticeDropdownAttribute.Equals(in_Config(&quot;CobraNotice&quot;))]" DisplayName="If - Check Dropdown Condition" sap:VirtualizedContainerService.HintSize="952,430.4" sap2010:WorkflowViewState.IdRef="If_3">
+              <If Condition="[strcobraNoticeDropdown.Equals(in_Config(&quot;CobraNotice&quot;))]" DisplayName="If - Check Cobra Dropdown Condition" sap:VirtualizedContainerService.HintSize="952,664" sap2010:WorkflowViewState.IdRef="If_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -300,11 +297,11 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Cobra Dropdown Option not found&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message - Dropdown Not Found" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Cobra Dropdown Option not found&quot;]" />
                   </Sequence>
                 </If.Else>
               </If>
-              <If Condition="[stregidInusranceDropdownAttribute.Equals(in_Config(&quot;LifeInsurance&quot;))]" DisplayName="If - Check Dropdown Condition" sap:VirtualizedContainerService.HintSize="952,664" sap2010:WorkflowViewState.IdRef="If_4">
+              <If Condition="[stregidInusranceDropdown.Equals(in_Config(&quot;LifeInsurance&quot;))]" DisplayName="If - Check EGID Dropdown Condition" sap:VirtualizedContainerService.HintSize="952,664" sap2010:WorkflowViewState.IdRef="If_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -344,11 +341,11 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Insurance Dropdown Option not found&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message - Dropdown Not Found" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Insurance Dropdown Option not found&quot;]" />
                   </Sequence>
                 </If.Else>
               </If>
-              <If Condition="[strfmlaRightsDropdownAttribute.Equals(in_Config(&quot;FMLARights&quot;))]" DisplayName="If - Check Dropdown Condition" sap:VirtualizedContainerService.HintSize="952,664" sap2010:WorkflowViewState.IdRef="If_5">
+              <If Condition="[strfmlaRightsDropdown.Equals(in_Config(&quot;FMLARights&quot;))]" DisplayName="If - Check FMLA Dropdown Condition" sap:VirtualizedContainerService.HintSize="952,664" sap2010:WorkflowViewState.IdRef="If_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -392,7 +389,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <If Condition="[strlongevityCertificateDropdownAttribute.Equals(in_Config(&quot;Longevity&quot;))]" DisplayName="If - Check Dropdown Condition" sap:VirtualizedContainerService.HintSize="952,664" sap2010:WorkflowViewState.IdRef="If_7">
+              <If Condition="[strlongevityDropdown.Equals(in_Config(&quot;Longevity&quot;))]" DisplayName="If - Check Longevity Dropdown Condition" sap:VirtualizedContainerService.HintSize="952,664" sap2010:WorkflowViewState.IdRef="If_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -436,7 +433,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="[CDbl(in_Config(&quot;MinimumDelay&quot;).ToString)]" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;First Name&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="[CDbl(in_Config(&quot;MinimumDelay&quot;).ToString)]" DisplayName="Type Into 'First Name' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;First Name&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 536, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Harry'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='First Name:' /&gt;" Guid="a36737da-d4f6-48b1-bddb-eb57aae9dc5c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKYSURBVHhe7dshc+JQGIXh/X+YqHhUTFVUDKomChWDWo+KiYqKiULFRMVEZSowGQTq7BeSbUuBLrTD7nLnfWbOTEmgrXvnUvpjt9uJMcYYc2nEjTHGmHMjbowxxpzba9xeXl4YY4yxh97ZuAEA8KiIGwDAOcQNAOAc4gYAcA5xAwA4h7gBAJxD3AAAziFuAADnEDcAgHOIGwDAOTfFrUpmms0SVdPjN5WSmd1LTu8AAPC3ETcAgHOIGwDAOfeJW1dqGc3le8PzPflBrKzpx3umy0K7vlTRZIoDT7MwU1cldi1UWm20Cn15w8+pV/Lt+4ZZN71ysFcZ22u8c78HAABfilusou/VH61Q/D5ubaFknatue3WNff00xChWuR9vj3Gz53tzLVaZiqrT/hC3MYZP8Vr5ptFWtVa+XQtSteNLrW2lYoumv6qnCwAAHPtC3D7ZpbclN0u77+n1YHeI21w/m/HxwRS35+LthDdo0+Dw3PVUt30Z22NftA0AcMkX4nbF25J9o3wZae7bie1d/I7jFuro3cYpbid93OaK7Pp4UutVLOx7zddvJzkAAD64Q9y2FiCLmh+r6Kb3IT+E66a4/f4bm79SPYUuSEkbAOCyO8TtzCcnvxU3c/hgiafFIrLnRMq303UAAM64Q9x6Fc/DB0hCrevu8IGTNhui9I24qVUaDD97Ji8u7SwHAMBld4ib6WutF4G84doQJH+uaJmpnk5ct8fNXpM+2X0+SAIA+LOb4vbvbJVHFsr3/xIAAMAFjxG3NlVgp7qIP7YBAK7wAHHbq0r8o38CBwDgM/9/3PaNynyjTcOpDQBwnQc4uQEAcBviBgBwDnEDADiHuAEAnEPcAADOuRg3xhhj7JF3EjfGGGPMje30C9WON7tZvjWxAAAAAElFTkSuQmCC" InformativeScreenshot="f74a1e7353d39ac2c455f2b1baaeff99.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -447,7 +444,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="[CDbl(in_Config(&quot;MinimumDelay&quot;).ToString)]" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Last Name&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="[CDbl(in_Config(&quot;MinimumDelay&quot;).ToString)]" DisplayName="Type Into 'Last Name' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Last Name&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 360, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='Last Name:' /&gt;" Guid="15c9ba47-06c3-4c51-b2a4-f29ea1ebdfe0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="202388d35a2586e1934d825aa573c28e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -458,7 +455,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Middle Initial'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Middle Name&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Middle Initial' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Middle Name&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 396, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='Middle Initial:' /&gt;" Guid="4c863b73-74f2-4313-b1ac-c00b8bd645cc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="96a3d303ee64fe6d185078883518ca32.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -469,7 +466,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'SSN1 (First 3)'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;SSN1&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'SSN1 (First 3)' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;SSN1&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 433, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='SSN1 (First 3):' /&gt;" Guid="0a50e274-c476-49cf-a3c8-3e39c7c1dc25" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="b4c11964a1dac70c79eed097ca5999f0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -480,7 +477,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'SSN2 (Middle 2)'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;SSN2&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'SSN2 (Middle 2)' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;SSN2&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 469, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='SSN2 (Middle 2):' /&gt;" Guid="80ffb481-ed72-44f1-8f8c-4d6b8e3c3414" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="f821f33d19333d224ebf0044aea7eca6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -491,7 +488,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'SSN3 (Last 4)'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;SSN3&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'SSN3 (Last 4)' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;SSN3&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 505, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='6' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='SSN3 (Last 4):' /&gt;" Guid="32bae78f-eea1-4929-8bc7-c97a5764d8d6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="fd06e30def15499137e46350d3cc5048.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -502,7 +499,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Date of Birth'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_21" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;DOB&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Date of Birth' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_21" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;DOB&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 541, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='7' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='Date of Birth:' /&gt;" Guid="5a2f7e37-6da7-43f2-80fc-d00f8ceae362" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="1a9baa6dd31c2c59c30ecea5d648330b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -513,7 +510,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Address'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Address&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Address' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Address&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 578, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='8' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='Address:' /&gt;" Guid="6892fa15-3545-4515-ac68-e2c1db9536e4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="a79020d673ddd4cb675cd502469be610.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -524,7 +521,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'City'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;City&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'City' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;City&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 614, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='9' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='City:' /&gt;" Guid="6e3363c9-bc54-44a8-8b37-4cd91be5f314" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="faad88e75d7b82daa7f92d727c120985.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -535,7 +532,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Apt #'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;AptNo&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Apt #' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;AptNo&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 650, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='10' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='Apt # :' /&gt;" Guid="ce47e92f-94e1-4d27-bd52-68a646a9c7f2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="f950fb1678fc64024e722c15278836e1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -546,7 +543,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'State'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;State&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'State' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;State&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 686, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='11' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='State:' /&gt;" Guid="44169f3e-ef6c-499f-99d5-54cb1aad80e6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="411f19e3b5452158d81d00fb05977db2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -557,7 +554,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Zip Code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Zip&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Zip Code' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Zip&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 723, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='12' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='Zip Code:' /&gt;" Guid="9e2bde7d-df32-4b0d-877b-a92b9a3cd46d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="3483d1265d40dcb31bcebec4c96e356c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -568,7 +565,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Primary Phone #'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Primary Phone&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Primary Phone #' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Primary Phone&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 759, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='13' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='Primary Phone #:' /&gt;" Guid="b9fbc56a-6ac1-49fc-9479-d11a47144c36" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="35425031426c369520e4f69347062307.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -579,7 +576,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Start Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_22" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Date of Hire&quot;).ToString]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Start Date' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_22" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[in_TransactionItem.SpecificContent(&quot;Date of Hire&quot;).ToString]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 795, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='14' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='Start Date:' /&gt;" Guid="64affa92-d2b6-41ea-bff0-80e98915687e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="ce58327023ec03bf11b0defa0a3c42b4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -590,7 +587,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Employee ID'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_15" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[strempID]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Employee ID' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_15" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[strempID]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="595, 831, 435, 32" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT customFields['cus…'" FullSelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='15' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name: Last Name: Middle Initial: SSN1 (First 3): SSN2 (Mid*' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='Employee ID:' /&gt;" Guid="037d4556-a1c7-4e9a-bff6-73e98e54e6b5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAbcAAAAkCAYAAAAKEnSyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVHhe7dWxDYAwEMBA9h81/dehowEGiHUneQZfM7MlSSplbpKkXOYmScr1zG2tJUnS0X3ODQBOZW4A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5JgbADnmBkCOuQGQY24A5PzOTZKkk3vNTZKkRrNv7llFt6ZHX94AAAAASUVORK5CYII=" InformativeScreenshot="b941c4bd24ca09c7df48eca6092790e1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -601,7 +598,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'unchecked'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
+              <uix:NCheck Action="Check" DisplayName="Check/Uncheck Password Protected" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
                 <uix:NCheck.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="386, 914, 25, 25" DesignTimeScaleFactor="1.25" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl class='' tag='INPUT' type='checkbox' aaname='Password protect the signed document' /&gt;" Guid="554f4f77-e394-4aba-a3b7-9db4f3b6aabd" InformativeScreenshot="5720e2dd34d6463a81a5bdd1febc182c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -612,7 +609,7 @@
                   </uix:TargetAnchorable>
                 </uix:NCheck.Target>
               </uix:NCheck>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[strempID]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[strempID]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="485, 953, 188, 26" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FriendlyName="'INPUT protectionPassword'" FullSelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl class='' tag='INPUT' type='password' aaname='Password:' /&gt;" Guid="e22d2521-ca15-4707-a22f-e008a9d25213" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMAAAAAeCAYAAAB66BFYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAB1SURBVHhe7dMxDcBAEMCw8sd2nK7Tv9ShCGJLgZBnIcwApBmAtDvAzEiZjs8AUGAA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgLTfAaRKxx0AenZf9nOtwapOO2MAAAAASUVORK5CYII=" InformativeScreenshot="7f1ec11b662c804a0b60e3620a4744ab.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -623,7 +620,7 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Confirm Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[strempID]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Confirm Password' in FieldBox" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Text="[strempID]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="799, 953, 188, 26" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FriendlyName="'INPUT confirmProtection…'" FullSelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl aaname='Confirm Password:' tableRow='1' tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl aaname='Confirm Password:' class='' tag='INPUT' type='password' /&gt;" Guid="c3940268-1b9c-41bf-92a2-a1cff616855b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMAAAAAeCAYAAAB66BFYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADkSURBVHhe7dwxCoQwFEXRWV22YZEmLsBVpXILViI2lq4hkFIQhD98GZHBHfjugVel/bfNJ4RggIJSig3DYDFG87v3EQDkbNtmbdsSAHQty/IfwDzPjMls3/dnAICC69YJAJIIANIIANIIANIIANIIANIIANIIANIIANIIANIIANIIANIIANIIANIIANIIANIIANIIANIIANIIANIeAdRaCQAy/NaP47gD8N+yCAAq/NbXdb0D8K/ixnH8PQPvNk2TdV13B+BrmsZyzmcIXghjb5sfft/3llI6b/4M4CqBMbXFGO0L+SN8pg+3lygAAAAASUVORK5CYII=" InformativeScreenshot="7c78125ba039d94467650252118bbd81.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -634,21 +631,21 @@
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Send'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Send' Button" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/customCompose?workflowid=CBJCHBCAABAAoHhOQaN6WsjJkultBOG70C8lb03DJxIE" DesignTimeRectangle="923, 979, 125, 42" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Send'" FullSelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl class='layout' tag='TABLE' /&gt;&lt;webctrl type='button' tag='BUTTON' class='blue button' aaname='Send' check:innerText='Send' /&gt;" Guid="593a6a85-0a31-4306-b672-405c7b60fae4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAAuCAYAAAAP6nprAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAWySURBVHhe7VxrbxRVGPYj8LGllaXdFn6CsSoJXwwqJoaEGEQhBfESuy0t5VJKFFFpoiFRMV7wWpQASsJFQhss9CJd2LYUaqNuL25boiwstItuL1R6J4/nuju7M1OaQGRm57zJk6fveZ9z5uyep+/MfNkHoMLxoUygQplAhTKBChJRE8xZVKTgMMiImmDWw3nIeO0kwU+MM/M4ZwiO5qqeFHV63jI0JvCICQSUJVSelDk9bxk6E2TmVSl2AJuaINNDBVVCSFjmiazqtq/PyjEyARnkwlPIIGLGKk/a3LgTEBNQgYIzYNoJmCD/tGIHsIkJ8rlAwRGg5y1DZwJ3QbViB7ChCWZTE1ABARNqoPLky807ARWsr1HsADbtBFTgLiDQskTiuKrbuk7PW0b87YBNqBUTa1WexLlxJ3ikQAgICgWrPGnz2TkF4uTjOgE3QVZhneIZcRVcy7ciZUkp0l+aid5abGwC2gmowFY4AdeK3UhdWsoOI2XJm0hd9hXme4y09xodaPyXf3dhf5tB3dqg5y1DZ4Ksop9twhXI2XUOvt4RjIrPwGJ4AFUHZjL/brkzzgQzn2cNNjUBExBQlrBq7v6gHV3jYvMJ0V6n19/7XG+C+Lq1c/NOQAUbztiC3+kY4Rsf+Bt7v2sU4xewtqIPR05o9ZVw5X6G9Gd2IGVpGdKe3QNXfqyeuWobUp7YhgfXHcO853Zh7tMkJ7r03Mq46zHOr8D8VR+R2w/RPFkB3zDfAjOBVmcDNu8ERGAXHLkuNh5sRdqqY3AbaKgB5u3woS54E4Oia4wOR1BX/jVceVxzOMTHg7+1w98vbywTGOw5jxfWnY6tlfcNHv+kBb5gwu2HRNjfHtPZBHcwQT3j7GLOVs2LOsfEzoHB4K/Y4nkLaSsPETPE9O4P/dFbxtjQLfT8M8ETcsj+k6eYTpqAxxRGpYTEYNtFcb1KrK4Naw5/CmMTU+JvboK7/Tz/d25sgkfXI4sJCShLWDXf2YP6odti9zxGewMoK/gcGUxbjfcC/ERH/wpg9Zr9cBGsvjjExtAfxCtEFzXBjV68sZOu34KDVyb5WH8Im+n1dnehmw1MIdx9FYVUV/xH7JmgrUO/P4vn9Lxl6EyQXey1Ebdge+swwpr/XuAm6vb8SOo9+EXeAiJhdAfD6CLoJm8TPCIoJ+scuSbSy3/G1m0aEIMR7CW52xfh6XgEX+yU1w/EmWD6fVqPTU2QvZEKvHpmEw3GLVNvwZaGAdyQZugLIrf4GnpEahgTw/iWzD+sMUF0PY0JykleFhC3nv7rWB+9bgBNcZ3AYF+SCaxWn6YTUMFZPZNJhuP3se5e+zFcr9bE1Rc1DYpPM0AOOIhW0Qm6ag/AnTBfcnwnEOPaTkDy5/3itMev4NOXa4QuoROYrM/4Pnw/d6pP0wnO2gYHL4+gu/4UVnpeR+pTBGsOYd8l0QoGIyjZ2Izv5f1+/Br2ed5G2vL3kb78Xcz1HMCK7XwdrQmi6yeYIPuHCMJipO/icTy0jK5TjQb5itjWGZtrE0xvgk3nbMFHe8XGdTGJjgY/133ZC+kLFuMTGB3nD33tZ/g6OhPQeVoTsOs1o6xHPCyyiK1DI9xBTJCwP6uziQkKucAmeNEbwaWR+LeDIfIa6PV2YrFGt3h/CN6+ScReKG8zXeVxXj/aJ4ZDoeic7Au3xCB5bpBjm1rZQ+gNzTXHJiZxNTSAo8d/j821Ceh5y9CZYMFmn2IHsKEJ5jxGTEAFBEyogcqTL59NzltGrBMIEyzY0qDYAWxoAtoJqCCKzSas6klRp+ctI/52wASNQtio8iTOp+kEVEBQIljlSZubdgIqWFjSJIScZZ7Iqm7vuokJivhEDdiEaaDqxuMSVq7T85ahM8HCrecVO4BNTcAEBJQlVJ6cuXknoILSZsUOYGMTLCKdgAgUnAHD3zHU/sihgjPAA/gPEpkPxgrlsGoAAAAASUVORK5CYII=" InformativeScreenshot="bc8851bb5ff0507c03aa338fa26faff0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Adobe Acrobat Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NCheckState DisplayName="Check App State '“New Hire'" sap:VirtualizedContainerService.HintSize="952,675.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Timeout="10" Version="V3">
+              <uix:NCheckState DisplayName="Check App State '“New Hire Paperwork Submitted'" sap:VirtualizedContainerService.HintSize="952,675.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Timeout="10" Version="V3">
                 <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,456.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Target screen appears" sap:VirtualizedContainerService.HintSize="449.6,456.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Filling Workfield Fields Ended&quot;]" />
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Home'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
+                    <ui:LogMessage DisplayName="Log Message - Target screen found" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Filling Workfield Fields Ended&quot;]" />
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Home' Menu" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://omesofm.na1.documents.adobe.com/account/postSend?aid=CBJCHBCAABAARHxWLw5esRb-_b6dSVjz4UZRqjqgmTOA&amp;pid=CBJCHBCAABAAf8jQqzYsUNMNmASglC1n1pWXzrb-tOW5" DesignTimeRectangle="475, 123, 44, 22" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Home'" FullSelectorArgument="&lt;webctrl aria-label='Home' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Home' tag='A' type='' class='spectrum-Link_5a03c7 spectrum-Link--quiet_5a03c7 spectrum-Link--secondary_5a03c7' aaname='Home' check:innerText='Home' /&gt;" Guid="84217220-2171-4bef-9a29-a7e57ac05299" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAaCAYAAADxNd/XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHfSURBVFhH7ZWhj4MwFMbvj0YgMAhEDQKBqajAICYwJ2sQiJqKiZmJCcwEAjOB+e69Arty4S4Xdgm5hC9psr5+r92vfS1v+Oc6APbWAbC3DoC9dQDsrSXAWSEIAgh9nwK+zlA0FgiNtdG9dADsrRcBBnT2hEzECGksjASyk0U3TMPk1IJykhMaLRGH9Jt9sURz59wSYooFYQLZfFl36GDLFNGcJxSa9jm500sAd506f6xq3LoWV60QsyepcBsdIwDH4hyVsTBVjoj7riVQ2sCaCnnE/Qjl1SWSKDcdPYVt0bcG0nkyNP1kIa0C/NhmgL5Bzv20hjcf+nqESmuOzgAS1tu4SxlRLERxmQKsS+nA4mpEH6x08+Tm4fpOt5PboNnDWgXgHbXWfmlUKjQ2AwxmXCDzt4NFYM4nDRXYDKDo/D5118LlqmUQgvOm4KXgvOVuP6sg1eimyOYSWv0TTr5vK4BXemvtLwC+PYGBapV9ylJnK0CPJhvzeJaftP0S9zVSvz/psQDbXkJtlTiP9O/AirYDkOZXKMornNsON1MgYQ8d8ejZDoAHredenRBCaRh3D2tUskAz1w/pJQCql999B7YAsPortEzc3OxnmCR7x9V70ZYA/1AHwN46APYV8AErdUm6wEYj5gAAAABJRU5ErkJggg==" InformativeScreenshot="77f6d44d6640183c9033c65a51aaf654.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Confirmation to Sign' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -662,13 +659,13 @@
                   </Sequence>
                 </uix:NCheckState.IfExists>
                 <uix:NCheckState.IfNotExists>
-                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Target screen does not appear" sap:VirtualizedContainerService.HintSize="449.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Workfield Entry not submitted&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message - Target screen not found" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Workfield Entry not submitted&quot;]" />
                   </Sequence>
                 </uix:NCheckState.IfNotExists>
                 <uix:NCheckState.Target>
@@ -681,7 +678,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NCheckState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Filling Workfield Fields Ended&quot;]" />
+              <ui:LogMessage DisplayName="Log Message - End Workflow Notification" sap:VirtualizedContainerService.HintSize="952,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Filling Workfield Fields Ended&quot;]" />
             </Sequence>
           </Sequence>
         </ActivityAction>
