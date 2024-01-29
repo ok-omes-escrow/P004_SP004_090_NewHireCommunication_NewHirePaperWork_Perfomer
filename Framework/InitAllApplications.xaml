@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1130.4,2268</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1104,2271.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -117,11 +117,12 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="747.2,2163.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="600,2206.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolLoginException" />
-      <Variable x:TypeArguments="x:String" Name="strExceptionMessage" />
+      <Variable x:TypeArguments="x:Int32" Name="intretryCounter" />
       <Variable x:TypeArguments="x:String" Name="strScreenshotPath" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolruntimeFolderExists" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -129,47 +130,100 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="684.8,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder to store runtime files" sap:VirtualizedContainerService.HintSize="684.8,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Path.Combine(in_Config(&quot;RuntimeLocalFolderPath&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString)]" />
-    <ui:RetryScope DisplayName="Login Exception Retry" sap:VirtualizedContainerService.HintSize="684.8,1716.8" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[CInt(in_Config(&quot;LogInRetryCount&quot;).ToString)]">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="537.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening Adobe Sign application&quot;]" />
+    <ui:FolderExistsX DisplayName="Check if runtime folder exists" Exists="[boolruntimeFolderExists]" sap:VirtualizedContainerService.HintSize="537.6,134.4" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[Path.Combine(in_Config(&quot;RuntimeLocalFolderPath&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString)]" />
+    <If Condition="[boolruntimeFolderExists]" DisplayName="Check for Run Time Folder Exists" sap:VirtualizedContainerService.HintSize="537.6,353.6" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376.8,170.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DeleteFolderX DisplayName="Delete runtime Folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="[Path.Combine(in_Config(&quot;RuntimeLocalFolderPath&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString)]" Recursive="True" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_18" />
+      </If.Else>
+    </If>
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder to store runtime files" sap:VirtualizedContainerService.HintSize="537.6,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Path.Combine(in_Config(&quot;RuntimeLocalFolderPath&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString)]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign: Init Exception Values" sap:VirtualizedContainerService.HintSize="537.6,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Boolean">[boolLoginException]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[intretryCounter]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:RetryScope DisplayName="Login Exception Retry" sap:VirtualizedContainerService.HintSize="537.6,1004" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[CInt(in_Config(&quot;LogInRetryCount&quot;).ToString)]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="643.2,1425.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="496,712.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="Multiple Assign: Init Exception Values" sap:VirtualizedContainerService.HintSize="580.8,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-              <ui:MultipleAssign.AssignOperations>
-                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:Boolean">[boolLoginException]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[strExceptionMessage]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">
-                        <Literal x:TypeArguments="x:String" Value="" />
-                      </InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                </scg:List>
-              </ui:MultipleAssign.AssignOperations>
-            </ui:MultipleAssign>
-            <TryCatch DisplayName="Check Login Status" sap:VirtualizedContainerService.HintSize="580.8,1125.6" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+            <Assign DisplayName="Assign intretryCounter" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intretryCounter]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[intretryCounter+1]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[intretryCounter &lt;= CInt(in_Config(&quot;LogInRetryCount&quot;).ToString) AND boolLoginException = True]" DisplayName="Check for Retry Counter" sap:VirtualizedContainerService.HintSize="433.6,386.4" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376.8,203.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\KillAllProcesses.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_20" />
+              </If.Else>
+            </If>
+            <TryCatch DisplayName="Check Login Status" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <l:Login_AdobeSign DisplayName="Login_AdobeSign Application" sap:VirtualizedContainerService.HintSize="334.4,194.4" sap2010:WorkflowViewState.IdRef="Login_AdobeSign_2" in_EmailAddress="[in_Config(&quot;AdobeSignEmailAddress&quot;).ToString]" in_MinDelay="[in_Config(&quot;DelayTimeLarge&quot;).ToString]" in_URL="[in_Config(&quot;AdobeSignURL&quot;).ToString]" />
+                <l:Login_AdobeSign DisplayName="Login_AdobeSign Application" sap:VirtualizedContainerService.HintSize="334.4,194.4" sap2010:WorkflowViewState.IdRef="Login_AdobeSign_4" in_EmailAddress="[in_Config(&quot;AdobeSignEmailAddress&quot;).ToString]" in_MinDelay="[in_Config(&quot;DelayTimeLarge&quot;).ToString]" in_URL="[in_Config(&quot;AdobeSignURL&quot;).ToString]" />
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="547.2,960.8" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502.4,385.6" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -180,69 +234,22 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Exception Sequence" sap:VirtualizedContainerService.HintSize="540.8,890.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <Sequence DisplayName="Exception Sequence" sap:VirtualizedContainerService.HintSize="496,315.2" sap2010:WorkflowViewState.IdRef="Sequence_25">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:MultipleAssign DisplayName="Multiple Assign: Exception Values" sap:VirtualizedContainerService.HintSize="478.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-                        <ui:MultipleAssign.AssignOperations>
-                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:Boolean">[boolLoginException]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[strExceptionMessage]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[exception.Message]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                          </scg:List>
-                        </ui:MultipleAssign.AssignOperations>
-                      </ui:MultipleAssign>
-                      <TryCatch sap2010:Annotation.AnnotationText="Take a screenshot of the current state of the screen to facilitate debugging." DisplayName="Try taking screenshot: Init" sap:VirtualizedContainerService.HintSize="478.4,376" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch.Try>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("RuntimeLocalFolderPath").ToString.Replace("&lt;Username&gt;",System.Environment.UserName)]</InArgument>
-                              <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strScreenshotPath]</InOutArgument>
-                            </ui:InvokeWorkflowFile.Arguments>
-                          </ui:InvokeWorkflowFile>
-                        </TryCatch.Try>
-                        <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ActivityAction x:TypeArguments="s:Exception">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
-                              </ActivityAction.Argument>
-                              <ui:LogMessage DisplayName="Log message (Screenshot not taken)" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Failed to take screenshot: &quot;+Exception.Message+&quot; at Source: &quot;+Exception.Source+&quot; At Source: &quot;+Exception.Source]" />
-                            </ActivityAction>
-                          </Catch>
-                        </TryCatch.Catches>
-                      </TryCatch>
-                      <Assign DisplayName="Assign : Screenshot Path to Config" sap:VirtualizedContainerService.HintSize="478.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign DisplayName="Assign boolLoginException" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[boolLoginException]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign : Screenshot Path to Config" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Object">[in_Config("ErrorScreenShotPath")]</OutArgument>
                         </Assign.To>
@@ -250,68 +257,6 @@
                           <InArgument x:TypeArguments="x:String">[strScreenshotPath]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="478.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                        <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,240.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <TryCatch sap2010:Annotation.AnnotationText="Close all applications before retrying to login.&#xA;If applications cannot be closed, kill their respective processes." DisplayName="Try closing applications" sap:VirtualizedContainerService.HintSize="387.2,128.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <TryCatch.Try>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\KillAllProcesses.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
-                                  <ui:InvokeWorkflowFile.Arguments>
-                                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
-                                  </ui:InvokeWorkflowFile.Arguments>
-                                </ui:InvokeWorkflowFile>
-                              </TryCatch.Try>
-                              <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,478.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ActivityAction x:TypeArguments="s:Exception">
-                                    <ActivityAction.Argument>
-                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
-                                    </ActivityAction.Argument>
-                                    <Sequence DisplayName="Close applications" sap:VirtualizedContainerService.HintSize="449.6,408" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log message (CloseAllApplications failed)" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;CloseAllApplications failed. &quot;+Exception.Message+&quot; at Source: &quot;+Exception.Source]" />
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
-                                        <ui:InvokeWorkflowFile.Arguments>
-                                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
-                                        </ui:InvokeWorkflowFile.Arguments>
-                                      </ui:InvokeWorkflowFile>
-                                    </Sequence>
-                                  </ActivityAction>
-                                </Catch>
-                              </TryCatch.Catches>
-                            </TryCatch>
-                          </Sequence>
-                        </ui:CommentOut.Body>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:CommentOut>
                     </Sequence>
                   </ActivityAction>
                 </Catch>
@@ -322,7 +267,7 @@
       </ui:RetryScope.ActivityBody>
       <ui:RetryScope.Condition>
         <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:CheckFalse DisplayName="Check False: Exception in Login" ErrorMessage="[in_Config(&quot;LoginRetryScopeError&quot;).ToString]" Expression="[boolLoginException]" sap:VirtualizedContainerService.HintSize="333.6,131.2" sap2010:WorkflowViewState.IdRef="CheckFalse_1" />
+          <ui:CheckFalse DisplayName="Check False: Exception in Login" ErrorMessage="[in_Config(&quot;LoginRetryScopeError&quot;).ToString]" Expression="[boolLoginException]" sap:VirtualizedContainerService.HintSize="333.6,131.2" sap2010:WorkflowViewState.IdRef="CheckFalse_2" />
         </ActivityFunc>
       </ui:RetryScope.Condition>
       <sap:WorkflowViewStateService.ViewState>

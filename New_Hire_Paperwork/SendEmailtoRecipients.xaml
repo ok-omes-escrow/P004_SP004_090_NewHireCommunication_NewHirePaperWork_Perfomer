@@ -1,20 +1,20 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SendEmail_Outlook" this:SendEmail_Outlook.in_listAttachmentFiles="[new List(of string)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_GraphAPI;assembly=LIB_GraphAPI" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_strAccount" Type="InArgument(x:String)" />
-    <x:Property Name="in_strBody" Type="InArgument(x:String)" />
-    <x:Property Name="in_strSubject" Type="InArgument(x:String)" />
-    <x:Property Name="in_arrToEmail" Type="InArgument(s:String[])" />
-    <x:Property Name="in_listAttachmentFiles" Type="InArgument(scg:List(x:String))" />
-    <x:Property Name="in_strTenantIDAsset" Type="InArgument(x:String)" />
-    <x:Property Name="in_strAppSecretAsset" Type="InArgument(x:String)" />
-    <x:Property Name="in_strAppIDAsset" Type="InArgument(x:String)" />
-    <x:Property Name="in_strOrchestratorFolder" Type="InArgument(x:String)" />
-    <x:Property Name="in_arrToEmailCC" Type="InArgument(s:String[])" />
+    <x:Property sap2010:Annotation.AnnotationText="Email Account from which Email to be Triggered " Name="in_strAccount" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Body of The Email" Name="in_strBody" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Subject of the Email" Name="in_strSubject" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="List of Recipient Email Address" Name="in_arrToEmail" Type="InArgument(s:String[])" />
+    <x:Property sap2010:Annotation.AnnotationText="List of Attachment Files" Name="in_listAttachmentFiles" Type="InArgument(scg:List(x:String))" />
+    <x:Property sap2010:Annotation.AnnotationText="Teneant ID Asset " Name="in_strTenantIDAsset" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="App Secret for Mail Activity " Name="in_strAppSecretAsset" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="App ID for Mail Activity " Name="in_strAppIDAsset" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Orchestrator Folder" Name="in_strOrchestratorFolder" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="CC Recipients for Email" Name="in_arrToEmailCC" Type="InArgument(s:String[])" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1130.4,1243.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1104,1243.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendEmail_O365_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">

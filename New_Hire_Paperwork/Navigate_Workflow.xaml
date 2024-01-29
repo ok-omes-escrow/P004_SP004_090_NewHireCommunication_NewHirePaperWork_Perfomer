@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1130.4,2167.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1130.4,2127.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_Workflow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,21 +103,21 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow contains the steps to navigate to the workflow" DisplayName="Navigate_Workflow" sap:VirtualizedContainerService.HintSize="569.6,2296" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow contains the steps to navigate to the workflow" DisplayName="Navigate_Workflow" sap:VirtualizedContainerService.HintSize="569.6,2062.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - Start Notification" sap:VirtualizedContainerService.HintSize="507.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Navigation to Workflow Started&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Adobe Sign Home" sap:VirtualizedContainerService.HintSize="507.2,1970.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V2">
+    <ui:LogMessage DisplayName="Log Message - Start of the workflow" sap:VirtualizedContainerService.HintSize="507.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Navigation to Workflow Started&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Adobe Sign Home" sap:VirtualizedContainerService.HintSize="507.2,1736.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ec1736ab-b0c1-41d5-985b-94d50c1dc349" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="473.6,1753.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="473.6,1520" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="boolworkflowExsist" />
             </Sequence.Variables>
@@ -160,7 +160,7 @@
                 </uix:TargetAnchorable>
               </uix:NCheckElement.Target>
             </uix:NCheckElement>
-            <If Condition="[boolworkflowExsist]" DisplayName="Check for New Hire Paperwork Workflow " sap:VirtualizedContainerService.HintSize="411.2,861.6" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[boolworkflowExsist]" DisplayName="Check for New Hire Paperwork Workflow " sap:VirtualizedContainerService.HintSize="410.4,628" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -199,13 +199,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="377.6,233.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="377.6,232" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message - End Notification" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;New Hire Paperwork workflow not found&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message - End of the Flow" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;New Hire Paperwork workflow not found&quot;]" />
                 </Sequence>
               </If.Else>
             </If>

@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1130.4,1578.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1104,2516.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -141,39 +141,31 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;Navigates to New Hire Paperwork Workflow, fills the employee details from the queue item, sends the email to business and updates the Sharepoint List Item&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="449.6,1513.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;Navigates to New Hire Paperwork Workflow, fills the employee details from the queue item, sends the email to business and updates the Sharepoint List Item&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="568.8,1497.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started New Hire Paperwork Process&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="New_Hire_Paperwork\Navigate_Workflow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="New_Hire_Paperwork\Navigate_Workflow.xaml">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="506.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started New Hire Paperwork Process&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="New_Hire_Paperwork\Navigate_Workflow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="506.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="New_Hire_Paperwork\Navigate_Workflow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="New_Hire_Paperwork\Filling_Fields_Workflow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="New_Hire_Paperwork\Filling_Fields_Workflow.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="New_Hire_Paperwork\Filling_Fields_Workflow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="506.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="New_Hire_Paperwork\Filling_Fields_Workflow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
         <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="New_Hire_Paperwork\Send_Email.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="New_Hire_Paperwork\Send_Email.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="New_Hire_Paperwork\Send_Email.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="506.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="New_Hire_Paperwork\Send_Email.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strrecipientEmailAddress">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Employee Email&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strempID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Employee ID&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-          <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
-        </InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strrecipientEmailAddress">[in_TransactionItem.SpecificContent("Employee Email").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strempID">[in_TransactionItem.SpecificContent("Employee ID").ToString]</InArgument>
+        <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <l:Update_List_Item DisplayName="Update List Item - Status" sap:VirtualizedContainerService.HintSize="387.2,506.4" sap2010:WorkflowViewState.IdRef="Update_List_Item_1" in_ColumnDisplayName="[in_Config(&quot;Status_ColumnDisplayName&quot;).ToString]" in_FilterCondition="[&quot;(fields/EmployeeName eq '&quot;+in_TransactionItem.SpecificContent(&quot;Employee Name&quot;).ToString+&quot;') and (fields/JRNumber eq '&quot;+in_TransactionItem.SpecificContent(&quot;JR Number&quot;).ToString+&quot;')&quot;]" in_ValueToBeUpdated="[in_Config(&quot;StatusToUpdate&quot;).ToString]" in_strApplicationIDAssetName="[in_Config(&quot;O365AppID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;O365ApplicationSecret&quot;).ToString]" in_strOrchestratorFolderPath="[in_Config(&quot;OrchestratorFolder&quot;).ToString]" in_strSharepointListName="[in_Config(&quot;NHC_SharepointListName&quot;).ToString]" in_strSharepointURL="[in_Config(&quot;NHC_SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;O365TenantID&quot;).ToString]" />

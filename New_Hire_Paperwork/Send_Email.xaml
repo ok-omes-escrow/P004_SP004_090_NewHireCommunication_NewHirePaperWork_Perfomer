@@ -1,14 +1,14 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Send_Email" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_GraphAPI;assembly=LIB_GraphAPI" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="in_strrecipientEmailAddress" Type="InArgument(x:String)" />
-    <x:Property Name="in_strempID" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Employee Email Address to which Notification Email to be Sent" Name="in_strrecipientEmailAddress" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Employee ID of the New Hire" Name="in_strempID" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1130.4,2711.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1104,2671.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Send_Email_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -222,33 +222,16 @@
     <ui:LogMessage DisplayName="Log Message - Email Hiring Manager" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Sending email to Recipients&quot;]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmailtoRecipients.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="510.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="New_Hire_Paperwork\SendEmailtoRecipients.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strAccount">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;EmailAccount&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strBody">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailBody" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strSubject">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;EmailSubject&quot;).ToString+&quot; &quot;+in_TransactionItem.SpecificContent(&quot;Employee Name&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="s:String[]" x:Key="in_arrToEmail">
-          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="in_strrecipientEmailAddress.Split(&quot;,&quot;c)" />
-        </InArgument>
-        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_listAttachmentFiles">
-          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(of string)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantIDAsset">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;O365TenantID&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strAppSecretAsset">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;O365ApplicationSecret&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strAppIDAsset">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;O365AppID&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strOrchestratorFolder">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorFolder&quot;).ToString" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAccount">[in_Config("EmailAccount").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strBody">[strEmailBody]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strSubject">[in_Config("EmailSubject").ToString+" "+in_TransactionItem.SpecificContent("Employee Name").ToString]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_arrToEmail">[in_strrecipientEmailAddress.Split(","c)]</InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_listAttachmentFiles">[new List(of string)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantIDAsset">[in_Config("O365TenantID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAppSecretAsset">[in_Config("O365ApplicationSecret").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAppIDAsset">[in_Config("O365AppID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strOrchestratorFolder">[in_Config("OrchestratorFolder").ToString]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_arrToEmailCC">[in_Config("EmailCC").ToString.Split(","c)]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
