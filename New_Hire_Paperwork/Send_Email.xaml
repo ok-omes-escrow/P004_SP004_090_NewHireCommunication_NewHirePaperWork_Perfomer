@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1104,2671.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1104,2851.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Send_Email_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -132,7 +132,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow downloads the Email Template from Sharepoint and Sends the Email to Buisiness" DisplayName="Send_Email" sap:VirtualizedContainerService.HintSize="572.8,2606.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow downloads the Email Template from Sharepoint and Sends the Email to Buisiness" DisplayName="Send_Email" sap:VirtualizedContainerService.HintSize="572.8,2786.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="stremailBody" />
       <Variable x:TypeArguments="x:Boolean" Name="boolNHPTemplate" />
@@ -155,7 +155,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </l:Files_or_Folders_Exist>
-    <If Condition="[boolNHPTemplate]" DisplayName="If NHP Template exists" sap:VirtualizedContainerService.HintSize="510.4,883.2" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[boolNHPTemplate]" DisplayName="If NHP Template exists" sap:VirtualizedContainerService.HintSize="510.4,1063.2" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,13 +173,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw DisplayName="Throw HM Template not found" Exception="[New Exception(in_Config(&quot;System Exception_2&quot;).ToString+&quot; : &quot;+in_Config(&quot;EmailTemplatesFolderPath&quot;).ToString+&quot;/&quot;+in_Config(&quot;HiringManagerTemplate_FileName&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+          <Throw DisplayName="Throw HM Template not found" Exception="[New Exception(in_Config(&quot;System Exception_2&quot;).ToString+&quot; : &quot;+in_Config(&quot;EmailTemplatesFolderPath&quot;).ToString+&quot;/&quot;+in_Config(&quot;HiringManagerTemplate_FileName&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
         </Sequence>
       </If.Else>
     </If>
@@ -222,16 +222,36 @@
     <ui:LogMessage DisplayName="Log Message - Email Hiring Manager" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Sending email to Recipients&quot;]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmailtoRecipients.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="510.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="New_Hire_Paperwork\SendEmailtoRecipients.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strAccount">[in_Config("EmailAccount").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strBody">[strEmailBody]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strSubject">[in_Config("EmailSubject").ToString+" "+in_TransactionItem.SpecificContent("Employee Name").ToString]</InArgument>
-        <InArgument x:TypeArguments="s:String[]" x:Key="in_arrToEmail">[in_strrecipientEmailAddress.Split(","c)]</InArgument>
-        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_listAttachmentFiles">[new List(of string)]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantIDAsset">[in_Config("O365TenantID").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strAppSecretAsset">[in_Config("O365ApplicationSecret").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strAppIDAsset">[in_Config("O365AppID").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strOrchestratorFolder">[in_Config("OrchestratorFolder").ToString]</InArgument>
-        <InArgument x:TypeArguments="s:String[]" x:Key="in_arrToEmailCC">[in_Config("EmailCC").ToString.Split(","c)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAccount">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;EmailAccount&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strBody">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailBody" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strSubject">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;EmailSubject&quot;).ToString+&quot; &quot;+in_TransactionItem.SpecificContent(&quot;Employee Name&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_arrToEmail">
+          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="in_strrecipientEmailAddress.Split(&quot;,&quot;c)" />
+        </InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_listAttachmentFiles">
+          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(of string)" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantIDAsset">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;O365TenantID&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAppSecretAsset">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;O365ApplicationSecret&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAppIDAsset">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;O365AppID&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strOrchestratorFolder">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorFolder&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_arrToEmailCC">
+          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="in_Config(&quot;EmailCC&quot;).ToString.Split(&quot;,&quot;c)" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
