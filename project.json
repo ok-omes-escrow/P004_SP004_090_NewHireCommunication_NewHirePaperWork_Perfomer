@@ -3,8 +3,8 @@
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {
-    "LIB_AdobeSign": "[1.0.6-alpha.2]",
-    "LIB_GraphAPI_1.0": "[1.0.1-alpha.2]",
+    "LIB_AdobeSign": "[1.0.6-alpha.5]",
+    "LIB_GraphAPI_1.0": "[1.0.1-alpha.4]",
     "LIB_O365MailActivities_00.00": "[1.0.3]",
     "UiPath.Excel.Activities": "[2.22.3]",
     "UiPath.System.Activities": "[23.10.3]",
