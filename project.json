@@ -3,7 +3,7 @@
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {
-    "LIB_AdobeSign": "[1.0.6-alpha.6]",
+    "LIB_AdobeSign": "[1.0.6-alpha.7]",
     "LIB_GraphAPI_1.0": "[1.0.1-alpha.4]",
     "LIB_O365MailActivities_00.00": "[1.0.3]",
     "UiPath.Excel.Activities": "[2.22.3]",
@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.0.1-alpha",
+  "projectVersion": "1.0.1-alpha.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
